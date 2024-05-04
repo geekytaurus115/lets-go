@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "93a027f8-761c-4d0c-b596-8e4de714b5ca",
+		"name": "Go-Movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21787862"
+	},
+	"item": [
+		{
+			"name": "Get-All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/movies"
+			},
+			"response": []
+		},
+		{
+			"name": "Get-by-Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/movies/1819140"
+			},
+			"response": []
+		},
+		{
+			"name": "Create-Movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isdn\": \"435527\",\n    \"title\": \"Movie Random\",\n    \"director\": {\n        \"firstname\": \"Mamata\",\n        \"lastname\": \"Shee\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/movie"
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Movie",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isdn\": \"435500\",\n    \"title\": \"Movie Random Updated\",\n    \"director\": {\n        \"firstname\": \"M\",\n        \"lastname\": \"Shee\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/movies/2135215"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-Movie",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/movies/2135215"
+			},
+			"response": []
+		}
+	]
+}
