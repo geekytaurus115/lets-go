@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "01d1a1bf-ce91-459f-ab6e-d724ceb9265d",
+		"name": "BookLibrary-With-Gin-Framework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21787862"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"iamuser\",\n    \"password\": \"mypassword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "iamuser",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "mypassword",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ1NDQxMzUsInVzZXJuYW1lIjoiaWFtYWRtaW4ifQ.mQdeUpynO1Neevep7lAnScBHAnq8IUAGbqNNFZJRO3s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"home"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addBook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ1NDQxMzUsInVzZXJuYW1lIjoiaWFtYWRtaW4ifQ.mQdeUpynO1Neevep7lAnScBHAnq8IUAGbqNNFZJRO3s",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "book_name",
+							"value": "New test book",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "author of test book",
+							"type": "text"
+						},
+						{
+							"key": "publication_year",
+							"value": "2024",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8080/addBook"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBook",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTQ1NDQyOTgsInVzZXJuYW1lIjoiaWFtdXNlciJ9.1wY4Bc7nfwicsDtnPiehHfm412TSzmvw-xAQlVH_BaE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/deleteBook?book_name=Go with gin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteBook"
+					],
+					"query": [
+						{
+							"key": "book_name",
+							"value": "Go with gin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "base",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/"
+			},
+			"response": []
+		}
+	]
+}
